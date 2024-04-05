@@ -7,43 +7,86 @@
 </head>
 
 <body>
-    <h2>Client Creation Form</h2>
+    <h2>Форма создания клиента</h2>
     <form id="clientForm" action="/action_page.php">
-        <p><span class="error">* required field</span></p>
-        Surname*: <input type="text" id="surname" required><span class="error" id="surnameError"></span><br>
-        Name*: <input type="text" id="name" required><span class="error" id="nameError"></span><br>
-        Date of Birth*: <input type="date" id="dob" required><span class="error" id="dobError"></span><br>
-        Phone number*: <input type="text" id="phone" required><span class="error" id="phoneError"></span><br>
-        Floor: <input type="number" id="floor"><br>
-        Client group*: <select id="clientGroup" multiple required>
-            <option value="VIP" selected="selected">VIP</option>
-            <option value="Problematic">Problematic</option>
-            <option value="Compulsory Medical Insurance">Compulsory Medical Insurance</option>
-        </select><span class="error" id="groupError"></span><br>
-        Attending doctor: <select id="doctor">
-            <option value="Ivanov">Ivanov</option>
-            <option value="Zakharov">Zakharov</option>
-            <option value="Chernysheva">Chernysheva</option>
+        <p><span class="error">* Поле обязательное для заполнения</span></p>
+
+        <h3>Атрибуты формы:</h3>
+        <label for="lastName">Фамилия*:</label> 
+        <input type="text" id="surname" required><span class="error" id="surnameError"></span><br>
+
+        <label for="firstName">Имя*:</label>
+        <input type="text" id="name" required><span class="error" id="nameError"></span><br>
+
+        <label for="middleName">Отчество:</label>
+        <input type="text" id="middleName" name="middleName"><br><br>
+
+        <label for="dob">Дата рождения*:</label>
+        <input type="date" id="dob" required><span class="error" id="dobError"></span><br>
+
+        <label for="phone">Номер телефона*:</label>
+        <input type="text" id="phone" required><span class="error" id="phoneError"></span><br>
+
+        <label for="gender">Пол:</label>
+        <input type="radio" id="male" name="gender" value="male"> Мужской
+        <input type="radio" id="female" name="gender" value="female"> Женский<br><br>
+
+        <label for="clientGroup">Группа клиентов*:</label>
+        <select id="clientGroup" name="clientGroup" multiple required>
+            <option value="VIP">VIP</option>
+            <option value="Проблемные">Проблемные</option>
+            <option value="ОМС">ОМС</option>
+        </select><br><br>
+        
+        <label for="doctor">Лечащий врач:</label>
+        <select id="doctor">
+            <option value="Ivanov">Иванов</option>
+            <option value="Zakharov">Захаров</option>
+            <option value="Chernysheva">Чернышева</option>
         </select><br>
-        Do not send SMS: <input type="checkbox" id="noSMS"><br>
-        Address:<br>
-        Index: <input type="text" id="index"><br>
-        Country: <input type="text" id="country"><br>
-        Area: <input type="text" id="area"><br>
-        City*: <input type="text" id="city" required><span class="error" id="cityError"></span><br>
-        Street: <input type="text" id="street"><br>
-        House: <input type="text" id="house"><br>
-        Passport:<br>
-        Document type*: <select id="docType" required>
-            <option value="Passport">Passport</option>
-            <option value="Birth Certificate">Birth Certificate</option>
-            <option value="Water. ID">Water. ID</option>
+
+        <label for="noSMS">Не отправлять СМС</label><br><br>
+        <input type="checkbox" id="noSMS"><br>
+
+        <h3>Адрес:</h3>
+        <label for="index">Индекс:</label>
+        <input type="text" id="index"><br>
+
+        <label for="country">Страна:</label>
+        <input type="text" id="country"><br>
+
+        <label for="region">Область:</label>
+        <input type="text" id="area"><br>
+
+        <label for="city">Город*:</label>
+        <input type="text" id="city" required><span class="error" id="cityError"></span><br>
+
+        <label for="street">Улица:</label>
+        <input type="text" id="street"><br>
+
+        <label for="house">Дом:</label>
+        <input type="text" id="house"><br>
+
+        <h3>Паспорт:</h3>
+        <label for="docType">Тип документа*:</label>
+        <select id="docType" required>
+            <option value="Passport">Паспорт</option>
+            <option value="Birth Certificate">Свидетельство о рождении</option>
+            <option value="Water. ID">Вод. удостоверение</option>
         </select><span class="error" id="docTypeError"></span><br>
-        Series: <input type="text" id="series"><br>
-        Number: <input type="text" id="number"><br>
-        Issued by: <input type="text" id="issuedBy"><br>
-        Date of issue*: <input type="date" id="issueDate" required><span class="error" id="issueDateError"></span><br>
-        <input type="submit" value="Submit">
+
+        <label for="passportSeries">Серия:</label>
+        <input type="text" id="series"><br>
+
+        <label for="number">Номер:</label>
+        <input type="text" id="number"><br>
+
+        <label for="issuedBy">Кем выдан:</label>
+        <input type="text" id="issuedBy"><br>
+
+        <label for="issueDate">Дата выдачи*:</label>
+        <input type="date" id="issueDate" required><span class="error" id="issueDateError"></span><br>
+        <input type="submit" value="Создать клиента">
     </form>
     <p id="successMessage"></p>
     <script src="form.js"></script>

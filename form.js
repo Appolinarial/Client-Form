@@ -1,6 +1,5 @@
-document.getElementById('clientForm').addEventListener('submit', function (event) {
+document.getElementById('clientForm').addEventListener('submit', (event) => {
     const form = document.querySelector("#clientForm");
-    console.log(new FormData(form));
 
     var phone = document.getElementById('phone').value;
     var phoneError = document.getElementById('phoneError');
